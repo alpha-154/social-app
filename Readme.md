@@ -20,10 +20,14 @@
 
 NOTES:
 
-//regarding db:
+//regarding `db`:
 
 1. while working with db, wrap it under the try..catch format
 2. to get response from database takes time, so always use async-await or promises with db codes
+
+//regarding `express -> app`:
+
+1. app.use() get used while working with cookies or middlewares in the code
 
 [Model Link] => https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj?origin=share
 
