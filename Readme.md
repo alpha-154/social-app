@@ -1,5 +1,7 @@
 ## a social-app
 
+---->>> All the Steps that I've follwed, mentioned here..
+
 => `.gitkeep` file (on public/temp folder) created to track the changes on temp file since automatically git won't be able to track this nested folder...
 
 => `.gitignore` file will have those files which have security issues and won't be deployed to github...
@@ -13,6 +15,15 @@
 => `prettier` -> (npm i -D prettier) & `.prettierrc` file is installed to maintain the same coding format (like spacing, semicommas) etc in all over the code
 
 => `.prettierignore`file is created to instruct prettier not to apply is styling format to mentioned files
+
+=> npm i mongoose express dotenv (mongoose, express & dotenv)
+
+NOTES:
+
+//regarding db:
+
+1. while working with db, wrap it under the try..catch format
+2. to get response from database takes time, so always use async-await or promises with db codes
 
 [Model Link] => https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj?origin=share
 
