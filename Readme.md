@@ -16,7 +16,24 @@
 
 => `.prettierignore`file is created to instruct prettier not to apply is styling format to mentioned files
 
-=> npm i mongoose express dotenv (mongoose, express & dotenv)
+=> `npm i mongoose express dotenv` installing (mongoose, express & dotenv)
+
+=> `npm install mongoose-aggregate-paginate-v2` installing mongoose-aggregate-paginate . The mongoose-aggregate-paginate-v2 package is an NPM module designed to provide pagination functionality for Mongoose aggregation queries.
+
+=> `npm i bcrypt` installing bcrypt package.
+`bcrypt` is a library used for hashing passwords and verifying them. Hashing is a one-way process that converts a password into a fixed-length string of characters, which is typically stored in a database. This ensures that even if the database is compromised, the original passwords cannot be easily retrieved.
+
+=> `npm i jsonwebtoken` installing jsonwebtoken package.
+`jsonwebtoken` is a library used for creating and verifying JSON Web Tokens (JWT). JWT is a compact, URL-safe means of representing claims to be transferred between two parties. It is commonly used for authentication and information exchange in web applications.
+
+=> UseCases:
+`bcrypt`:
+Password Storage: Securely storing user passwords in a database.
+Authentication: Verifying user login attempts by comparing entered passwords with stored hashed passwords.
+
+`jsonwebtoken`:
+Token-Based Authentication: Securing APIs by issuing tokens upon successful login and validating them on subsequent requests.
+Authorization: Including roles and permissions in the token payload to control access to different parts of an application.
 
 NOTES:
 
