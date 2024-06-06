@@ -1,26 +1,45 @@
+//This file is crucial as it initializes the environment, establishes a database connection, and starts the server, making it the main entry point of the backend application.
+
+
+
 //require('dotenv').config({path: './env'})
 
-//dotenv reloads all the .env files to all the folders
-import dotenv from "dotenv"
-//connecting database
-import connectDB from "./db/index.js"
-import { app } from './app.js'
+
+// Load environment variables from a .env file into process.env
+//This line imports the dotenv package, which is used to load environment variables from a .env file into process.env.
+import dotenv from "dotenv";
 
 
+
+// Import the function to connect to the database
+import connectDB from "./db/index.js";
+
+
+// Import the Express app
+import { app } from './app.js';
+
+
+
+// Configure dotenv to load environment variables from the specified path
 dotenv.config({
     path: './env'
-})
+});
 
 
+
+// Connect to the database
 connectDB()
-.then(() => {
-    app.listen(process.env.PORT || 8000 , () => {
-        console.log(`Server is running at port : ${process.env.PORT}`)
+    .then(() => {
+        // If the database connection is successful, start the server
+        app.listen(process.env.PORT || 8000, () => {
+            console.log(`Server is running at port : ${process.env.PORT}`);
+        });
     })
-})
-.catch( (error) => {
-    console.log("MONGODB connection FAILED", error)
-})
+    .catch((error) => {
+        // If there is an error connecting to the database, log the error
+        console.log("MONGODB connection FAILED", error);
+    });
+
 
 
 

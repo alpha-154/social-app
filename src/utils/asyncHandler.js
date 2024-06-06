@@ -1,3 +1,12 @@
+/*
+
+Defines the `asyncHandler` function, which takes a request handler (`requestHandler`) as an argument.
+It returns a new function that wraps the `requestHandler` in a promise.
+`Promise.resolve(requestHandler(req, res, next))` ensures the request handler is executed as a promise.
+`.catch((err) => next(err))` catches any errors thrown during the execution of the request handler and passes them to the next middleware (error handler).
+
+*/
+ 
 const asyncHandler = (requestHandler) => {
     
       return (req, res, next) => {

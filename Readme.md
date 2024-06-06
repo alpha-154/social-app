@@ -41,6 +41,8 @@ Authorization: Including roles and permissions in the token payload to control a
 => `npm i cloudinary` installing cloudinary.
 Cloudinary is a cloud-based service that provides a comprehensive solution for managing and delivering media assets, including images and videos, in web and mobile applications. It offers a wide range of features for storing, transforming, optimizing, and delivering media content.
 
+- we'll store media files like (images, videos ) first on the local file (./public/temp) and then we'll upload it to the cloudinary
+
 NOTES:
 
 //regarding `db`:
