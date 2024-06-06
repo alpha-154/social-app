@@ -35,6 +35,12 @@ Authentication: Verifying user login attempts by comparing entered passwords wit
 Token-Based Authentication: Securing APIs by issuing tokens upon successful login and validating them on subsequent requests.
 Authorization: Including roles and permissions in the token payload to control access to different parts of an application.
 
+=> `npm i multer` installing multer npm package.
+`multer` simplifies the process of handling file uploads in web applications. It parses incoming file data and saves it to the specified destination on the server.
+
+=> `npm i cloudinary` installing cloudinary.
+Cloudinary is a cloud-based service that provides a comprehensive solution for managing and delivering media assets, including images and videos, in web and mobile applications. It offers a wide range of features for storing, transforming, optimizing, and delivering media content.
+
 NOTES:
 
 //regarding `db`:
