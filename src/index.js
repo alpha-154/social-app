@@ -22,7 +22,7 @@ import { app } from './app.js';
 
 // Configure dotenv to load environment variables from the specified path
 dotenv.config({
-    path: './env'
+    path: './.env'
 });
 
 

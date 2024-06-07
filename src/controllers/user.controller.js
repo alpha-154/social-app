@@ -19,8 +19,11 @@ const registerUser = asyncHandler( async (req,res) => {
 
 
     //step: 1
-    const { fullName, email, username, password} = req.body
-    console.log("email: ", email)
+    const { fullName, email, username, password } = req.body
+    // console.log("request body: ", req.body)
+    // console.log("email: ", email)
+    // console.log("fullname: ", fullName)
+
 
     /* if we write all the `validation` codes in following simple `if` condition way then it'll be long . So, instead of writing the validations codes that way , we've approached to the more `optimised `way 
       if( fullName === ""){
@@ -46,7 +49,7 @@ const registerUser = asyncHandler( async (req,res) => {
     `What this line does`: It searches the database for a user document where either the username or email matches the provided values. If such a user is found, it is assigned to the existedUser variable.
 
     */
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
         $or: [ {username}, {email} ]
     })
 
@@ -56,15 +59,24 @@ const registerUser = asyncHandler( async (req,res) => {
 
 
     //step:4
+
     const avatarLocalPath = req.files?.avatar[0]?.path; 
-    const coverImageLocalPath = req.files?.coverImgae[0]?.path;
+    //const coverImageLocalPath = req.files?.coverImage[0]?.path;
+    //these piece of code (above line) isn't well designed to perform when the cover image isn't send.
+    //So, that's why we've come up with this following code , and through this code whenever cover image isn't provided then for this approach we won't get the undefinied error.
+
+    let coverImageLocalPath;
+    if(req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0){
+        coverImageLocalPath = req.files.coverImage[0].path
+    }
+
    
+    //console.log("request files: ", req.files)
+
     if(!avatarLocalPath){
         throw new ApiError(400, "Avatar file is required")
     }
-    // else{
-    //    console.log("localPath: ",avatarLocalPath)
-    // }
+    
 
     //step:5
     
