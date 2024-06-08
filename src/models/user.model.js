@@ -53,6 +53,8 @@ const userSchema = new Schema(
 
 )
 
+//  login part
+
 userSchema.pre("save", async function (next) {
    if(!this.isModified("password")) return next();
 
@@ -97,4 +99,5 @@ userSchema.methods.generateRefreshToken = function(){
 }
 
 
+//Through this `User` variable , we can directly talk to the database user's informaion
 export const User = mongoose.model("User", userSchema)

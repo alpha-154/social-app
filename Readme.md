@@ -54,6 +54,9 @@ NOTES:
 
 1. app.use() get used while working with cookies or middlewares in the code
 
+//regarding `Security & Authorization`:
+-> By using access and refresh tokens, you can create a secure and efficient authentication system that balances security and user experience.
+
 [Model Link] => https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj?origin=share
 
 [Video Playlist] => https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW
