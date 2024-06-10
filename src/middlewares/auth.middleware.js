@@ -22,6 +22,8 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
         // Find the user by the ID from the decoded token, excluding password and refreshToken fields
         const user = await User.findById(decodedToken?._id).select("-password -refreshToken");
 
+        // console.log("look for password `(auth.middleware.js)` file: ", user)
+
         // If no user is found, throw an invalid access token error
         if (!user) {
             throw new ApiError(401, "Invalid Access Token");
